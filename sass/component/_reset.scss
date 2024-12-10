@@ -1,0 +1,34 @@
+@use 'variable' as v;
+
+*::before,
+*::after,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+    font-family: v.$Poppins-Bold;
+    list-style: none;
+}
+
+html {
+    box-sizing: inherit;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 100%;
+    background: v.$black;
+    color: v.$white;
+}
+
+button {
+    font: inherit;
+}
+
+a:active,
+a:visited, 
+a:hover, 
+a {
+    text-decoration: none;
+}

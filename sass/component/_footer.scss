@@ -1,0 +1,43 @@
+@use 'variable' as v;
+@use 'mixins' as m;
+
+footer {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+
+    .below {
+        width: 100%;
+        padding: 25px 3%;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .below1 {
+            figure {
+                width: 100%;
+                height: auto;
+                img {
+                    width: 120px;
+                    height: auto;
+                    transition: .300s ease-in;
+                }
+                
+            }
+        }
+        .below2 {
+            h4 {
+                font-size: 1.25rem;
+
+                a {
+                    color: v.$oranged-hover;
+                }
+                a:hover {
+                    color: blue;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,19 @@
+@use 'variable' as v;
+
+//buttons styles
+
+@mixin button() {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 11px;
+    cursor: pointer;
+    background: linear-gradient(to right, v.$oranged 90%, v.$red);
+    color: v.$black;
+    font-size: 1.2rem;
+    transition: .300s ease-in;
+}
+//button hover
+@mixin button-hover() {
+    background: linear-gradient(to right, v.$oranged-hover 90%, v.$red-hover);
+    color: v.$white;
+}

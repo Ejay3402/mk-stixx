@@ -1,0 +1,29 @@
+//fonts oppins-Bold
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url('../../assets/fonts/Poppins/Poppins-Bold.ttf');
+}
+$Poppins-Bold : Poppins-Bold;
+
+//oppins
+@font-face {
+    font-family: 'Roboto-Black';
+    src: url('../../assets/fonts/Roboto/Roboto-BlackItalic.ttf');
+}
+$Roboto-Black : Roboto-Black;
+
+@font-face {
+    font-family: Roboto-BoldItalic;
+    src: url('../../assets/fonts/Roboto/Roboto-BoldItalic.ttf');
+}
+
+$Roboto-BoldItalic : Roboto-BoldItalic;
+
+//colors
+$black : rgba(0, 0, 0, 0.968);
+$sub-black : rgba(46, 40, 40, 0.968);
+$white : rgba(222, 222, 222, 0.936);
+$red : red;
+$red-hover : rgb(179, 23, 23);
+$oranged : orange;
+$oranged-hover : rgb(131, 88, 9);

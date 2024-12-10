@@ -1,0 +1,129 @@
+@use 'variable' as v;
+@use 'mixins' as m;
+
+/* header part */
+
+header {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    //height: 1200vh;
+    nav {
+        background: v.$black;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 28px 4%;
+        justify-content: space-between;
+        border-bottom: 1.2px solid v.$white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        z-index: 1;
+
+        figure {
+            position: relative;
+            display: inline-block;
+            height: auto;
+            img {
+                width: 80px;
+                height: auto;
+            }
+        }
+
+        ul {
+            display: flex;
+            li a {
+                color: v.$white;
+                text-decoration: none;
+                margin: 0 10px;
+                letter-spacing: .1em;
+                font-size: 1.2rem;
+                font-weight: 700;
+                transition: .350s ease-in;
+            }
+            li a:hover,
+            li a.active {
+                color: v.$red;
+                border-bottom: 2.6px solid v.$red;
+            }
+        }
+
+        .social-links {
+            display: flex;
+            svg {
+                fill: v.$white;
+                width: 18px;
+                height: auto;
+                cursor: pointer;
+                transition: .300s ease-in-out;
+                margin: 0 18px;
+            }
+            svg:hover {
+                fill: v.$red;
+                scale: 1.1;
+            }
+        }
+    }
+
+    //hero section
+    .hero {
+        display: flex;
+        background: linear-gradient(v.$black, v.$sub-black);
+        justify-content: space-between;
+        flex-flow: row nowrap;
+        gap: 2rem;
+        padding: 150px 7% 50px;
+
+
+        .block1 {
+            width: 100%;
+
+            h1 {
+                margin: 0 0 50px;
+                font-size: 3.5rem;
+                font-family: v.$Roboto-BoldItalic;
+                text-shadow: 2px 2px v.$red;
+            }
+
+            p {
+                margin: 40px auto;
+                line-height: 1.5;
+                font-family: v.$Poppins-Bold;
+                font-size: 1.2rem;
+            }
+
+            .btnevent {
+                button {
+                    @include m.button();
+                }
+                button:hover {
+                    @include m.button-hover();
+                }
+            }
+        }
+
+        .block2 {
+            width: 70%;
+
+            figure {
+                width: 100%;
+                height: auto;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    height: 100vh;
+                    transition: .400s ease-in;
+                    cursor: pointer;
+                }
+            }
+            figure:hover img {
+                scale: 1.1;
+            }
+            
+        }
+
+    }
+}
