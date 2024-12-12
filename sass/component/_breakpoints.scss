@@ -1,0 +1,9 @@
+$break-points : (
+    'min-laptop' : 1178px,
+);
+
+@mixin breakPoint($val) {
+    @media (max-width : map-get($break-points, $val)) {
+        @content;
+    }
+}

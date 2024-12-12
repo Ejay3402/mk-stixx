@@ -17,3 +17,38 @@
     background: linear-gradient(to right, v.$oranged-hover 90%, v.$red-hover);
     color: v.$white;
 }
+
+
+//top styles
+
+@mixin top-style() {
+    margin-top: 30px;
+    padding: 150px 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(2 , 2, 2, 0.7), rgba(2 , 2, 2, 0.6)) ,url('../../assets/images/backimage.jpg');
+    background-size: cover;
+    background-origin: initial;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+//input
+
+@mixin input() {
+    color: v.$white;
+    background: #1e1b1b;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border: none;
+    margin: 22px 10px;
+    width: 80%;
+    padding: 12px 11px;
+    border-radius: 5px;
+    text-align: center;
+    transition: .400s ease-in-out
+}

@@ -1,0 +1,11 @@
+@use 'breakpoints' as b;
+@use 'variable' as v;
+@use 'mixins' as m;
+
+.store-top {
+    @include m.top-style();
+    h2 {
+        font-size: 3rem;
+        font-family: v.$Roboto-Black;
+    }
+}

@@ -43,6 +43,10 @@ a {
   text-decoration: none;
 }
 
+svg {
+  fill: #fff;
+}
+
 /* header part */
 header {
   width: 100%;
@@ -63,6 +67,11 @@ header nav {
   right: 0;
   overflow: hidden;
   z-index: 1;
+}
+@media (max-width: 1178px) {
+  header nav {
+    padding: 22px 2%;
+  }
 }
 header nav figure {
   position: relative;
@@ -112,6 +121,11 @@ header .hero {
   flex-flow: row nowrap;
   gap: 2rem;
   padding: 150px 7% 50px;
+}
+@media (max-width: 1178px) {
+  header .hero {
+    padding: 150px 3.7%;
+  }
 }
 header .hero .block1 {
   width: 100%;
@@ -173,6 +187,11 @@ main .review-class {
   gap: 2.5rem;
   padding: 50px 7%;
 }
+@media (max-width: 1178px) {
+  main .review-class {
+    padding: 40px 4%;
+  }
+}
 main .review-class .class1 h2 {
   margin: 12px auto;
   font-size: 2rem;
@@ -225,14 +244,6 @@ main .Subscribe form {
   flex-flow: row wrap;
 }
 main .Subscribe form input {
-  padding: 15px 20px;
-  border: none;
-  border-radius: 11px;
-  cursor: pointer;
-  background: linear-gradient(to right, orange 90%, red);
-  color: rgba(0, 0, 0, 0.968);
-  font-size: 1.2rem;
-  transition: 0.3s ease-in;
   color: rgba(222, 222, 222, 0.936);
   background: #1e1b1b;
   font-weight: 700;
@@ -240,7 +251,7 @@ main .Subscribe form input {
   border: none;
   margin: 22px 10px;
   width: 80%;
-  padding: 12px 5px;
+  padding: 12px 11px;
   border-radius: 5px;
   text-align: center;
   transition: 0.4s ease-in-out;
@@ -275,6 +286,9 @@ main .what-you-get {
 }
 main .what-you-get .con {
   width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-attachment: fixed;
   background: rgb(222, 217, 208);
   padding: 50px 5%;
   color: rgba(0, 0, 0, 0.968);
@@ -283,6 +297,11 @@ main .what-you-get .con {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto auto;
   position: relative;
+}
+@media (max-width: 1178px) {
+  main .what-you-get .con {
+    padding: 22px 3%;
+  }
 }
 main .what-you-get .con .box {
   padding: 12px 10px;
@@ -312,10 +331,15 @@ main .saying {
   width: 100%;
   padding: 100px 5%;
 }
+@media (max-width: 1178px) {
+  main .saying {
+    padding: 72px 3.5%;
+  }
+}
 main .saying h2 {
   text-align: center;
   margin-bottom: 50px;
-  font-size: 2.5rem;
+  font-size: 3.3rem;
   font-family: Roboto-Black;
 }
 main .saying .say-lists {
@@ -359,9 +383,151 @@ main .saying .say-lists .say-box p::before {
   font-family: Roboto-Black;
 }
 
+.main-events {
+  background: rgb(222, 217, 208);
+  height: auto;
+  width: 100%;
+  padding: 150px 4%;
+}
+
+.contact-top {
+  margin-top: 30px;
+  padding: 150px 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(2, 2, 2, 0.7), rgba(2, 2, 2, 0.6)), url("../../assets/images/backimage.jpg");
+  background-size: cover;
+  background-origin: initial;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.contact-top h2 {
+  font-size: 3rem;
+  font-family: Roboto-Black;
+}
+
+.contact {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  grid-template-rows: 1fr;
+  padding: 81px 5%;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.contact svg {
+  width: 25px;
+  margin: 10px;
+}
+.contact .contact1 h3 {
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 1.5rem;
+  border-bottom: 2px solid rgb(179, 23, 23);
+  padding-bottom: 11px;
+}
+.contact .contact1 .social-links .con {
+  margin: 25px auto;
+}
+.contact .contact1 .social-links .con a {
+  display: inline-flex;
+  align-items: center;
+  margin: 5px auto;
+  color: red;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+}
+.contact .contact1 .social-links .links {
+  margin: 10px 5px;
+}
+.contact .contact1 .social-links .links a {
+  margin: auto 10px;
+  transition: 0.4s ease-in;
+}
+.contact .contact1 .social-links .links svg:hover {
+  fill: red;
+}
+.contact .contact2 h3 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+.contact .contact2 form label {
+  font-family: Roboto-BoldItalic;
+  font-size: 1.22rem;
+}
+.contact .contact2 form input,
+.contact .contact2 form textarea {
+  color: rgba(222, 222, 222, 0.936);
+  background: #1e1b1b;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border: none;
+  margin: 22px 10px;
+  width: 80%;
+  padding: 12px 11px;
+  border-radius: 5px;
+  text-align: center;
+  transition: 0.4s ease-in-out;
+  text-align: left;
+  border-radius: 11px;
+  width: 100%;
+  margin: 12px auto;
+  transition: 0.4s ease-in;
+}
+.contact .contact2 form input:hover,
+.contact .contact2 form input:focus,
+.contact .contact2 form textarea:hover,
+.contact .contact2 form textarea:focus {
+  border: 1px solid red;
+}
+.contact .contact2 form textarea {
+  resize: vertical;
+}
+.contact .contact2 form button {
+  padding: 15px 20px;
+  border: none;
+  border-radius: 11px;
+  cursor: pointer;
+  background: linear-gradient(to right, orange 90%, red);
+  color: rgba(0, 0, 0, 0.968);
+  font-size: 1.2rem;
+  transition: 0.3s ease-in;
+  margin-top: 20px;
+  padding: 8px 42px;
+}
+.contact .contact2 form button:hover {
+  background: linear-gradient(to right, rgb(131, 88, 9) 90%, rgb(179, 23, 23));
+  color: rgba(222, 222, 222, 0.936);
+}
+
+.store-top {
+  margin-top: 30px;
+  padding: 150px 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(2, 2, 2, 0.7), rgba(2, 2, 2, 0.6)), url("../../assets/images/backimage.jpg");
+  background-size: cover;
+  background-origin: initial;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.store-top h2 {
+  font-size: 3rem;
+  font-family: Roboto-Black;
+}
+
 footer {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
+  clear: both;
 }
 footer .below {
   width: 100%;

@@ -1,0 +1,103 @@
+@use 'variable' as v;
+@use 'mixins' as m;
+@use 'breakpoints' as b;
+
+.contact-top {
+    @include m.top-style();
+
+    h2 {
+        font-size: 3rem;
+        font-family: v.$Roboto-Black;
+    }
+}
+
+.contact {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    gap: 3rem;
+    grid-template-rows: 1fr;
+    padding: 81px 5%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+
+    svg {
+        width: 25px;
+        margin: 10px;
+    }
+
+    .contact1 {
+        h3 {
+            margin-bottom: 12px;
+            text-align: center;
+            font-size: 1.5rem;
+            border-bottom: 2px solid v.$red-hover;
+            padding-bottom: 11px;
+        }
+
+        .social-links {
+            .con {
+                margin: 25px auto;
+                a {
+                    display: inline-flex;
+                    align-items: center;
+                    margin: 5px auto;
+                    color: v.$red;
+                    font-size: 1.2rem;
+                    letter-spacing: .1em;
+                }
+            }
+            .links {
+                margin: 10px 5px;
+                a {
+                    margin: auto 10px;
+                    transition: .400s ease-in;
+                }
+                svg:hover {
+                    fill: v.$red;
+                }
+            } 
+        }
+    }
+
+    .contact2 {
+        h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        form {
+            label {
+                font-family: v.$Roboto-BoldItalic;
+                font-size: 1.22rem;
+            }
+            input ,
+            textarea {
+                @include m.input();
+                text-align: left;
+                border-radius: 11px;
+                width: 100%;
+                margin: 12px auto;
+                transition: .400s ease-in;
+            }
+            input:hover ,
+            input:focus ,
+            textarea:hover ,
+            textarea:focus {
+                border: 1px solid v.$red;
+            }
+            textarea {
+                resize: vertical;
+            }
+            button {
+                @include m.button();
+                margin-top: 20px;
+                padding: 8px 42px;
+            }
+            button:hover {
+                @include m.button-hover();
+            }
+        }
+    }
+
+}
