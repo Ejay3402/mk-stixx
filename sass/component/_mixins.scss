@@ -1,4 +1,5 @@
 @use 'variable' as v;
+@use 'breakpoints' as b;
 
 //buttons styles
 
@@ -9,7 +10,7 @@
     cursor: pointer;
     background: linear-gradient(to right, v.$oranged 90%, v.$red);
     color: v.$black;
-    font-size: 1.2rem;
+    font-size: clamp(0.889rem, 0.814rem + 0.377vw, 1.2rem);
     transition: .300s ease-in;
 }
 //button hover
@@ -34,6 +35,16 @@
     background-position: left;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
+    @include b.breakPoint('600px') {
+        padding: 105px 10px;
+    }
+}
+
+//top style h2
+@mixin top-h2() {
+    font-size: clamp(2rem, 1.758rem + 1.212vw, 3rem);
+    font-family: v.$Roboto-Black;
 }
 
 

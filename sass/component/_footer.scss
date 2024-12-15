@@ -1,5 +1,6 @@
 @use 'variable' as v;
 @use 'mixins' as m;
+@use 'breakpoints' as b;
 
 footer {
     border-top-left-radius: 12px;
@@ -11,8 +12,19 @@ footer {
         padding: 25px 3%;
         background: #000;
         display: flex;
+        flex-flow: row nowrap;
         align-items: center;
         justify-content: space-between;
+
+        @include b.breakPoint('810px') {
+            padding: 23px 1.5%;
+        }
+
+        @include b.breakPoint('show-meun') {
+            flex-flow: column nowrap;
+            text-align: center;
+        }
+        
 
         .below1 {
             figure {
@@ -22,13 +34,20 @@ footer {
                     width: 120px;
                     height: auto;
                     transition: .300s ease-in;
+                    @include b.breakPoint('810px') {
+                        width: 110px;
+                    }
+                    @include b.breakPoint('show-meun') {
+                        margin-bottom: 20px;
+                        width: 80px;
+                    }
                 }
                 
             }
         }
         .below2 {
             h4 {
-                font-size: 1.25rem;
+                font-size: clamp(0.844rem, 0.746rem + 0.492vw, 1.25rem);
 
                 a {
                     color: v.$oranged-hover;

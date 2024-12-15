@@ -6,8 +6,7 @@
     @include m.top-style();
 
     h2 {
-        font-size: 3rem;
-        font-family: v.$Roboto-Black;
+        @include m.top-h2();
     }
 }
 

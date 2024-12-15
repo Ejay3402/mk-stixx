@@ -6,8 +6,7 @@
     @include m.top-style();
 
     h2 {
-        font-size: 3rem;
-        font-family: v.$Roboto-Black;
+        @include m.top-h2();
     }
 }
 
@@ -22,16 +21,29 @@
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
 
+    @include b.breakPoint('expand-contact-laptop') {
+        padding: 50px 2.5%;
+        gap: 2rem;
+    }
+
+    @include b.breakPoint(break-p) {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
     svg {
         width: 25px;
         margin: 10px;
+        @include b.breakPoint(break-p) {
+            width: 20px;
+        }
     }
 
     .contact1 {
         h3 {
             margin-bottom: 12px;
             text-align: center;
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 1.127rem + 0.364vw, 1.5rem);
             border-bottom: 2px solid v.$red-hover;
             padding-bottom: 11px;
         }
@@ -39,12 +51,15 @@
         .social-links {
             .con {
                 margin: 25px auto;
+                @include b.breakPoint(break-p) {
+                    margin: 20px 2px;
+                }
                 a {
                     display: inline-flex;
                     align-items: center;
                     margin: 5px auto;
                     color: v.$red;
-                    font-size: 1.2rem;
+                    font-size: clamp(0.858rem, 0.812rem + 0.378vw, 1.2rem);
                     letter-spacing: .1em;
                 }
             }
@@ -64,12 +79,12 @@
     .contact2 {
         h3 {
             margin-bottom: 20px;
-            font-size: 1.5rem;
+            font-size: clamp(1.258rem, 1.199rem + 0.293vw, 1.5rem);
         }
         form {
             label {
                 font-family: v.$Roboto-BoldItalic;
-                font-size: 1.22rem;
+                font-size: clamp(1.122rem, 1.098rem + 0.119vw, 1.22rem);
             }
             input ,
             textarea {
@@ -79,6 +94,11 @@
                 width: 100%;
                 margin: 12px auto;
                 transition: .400s ease-in;
+
+                @include b.breakPoint('600px') {
+                    padding: 10px 5px;
+                    font-size: 1rem;
+                }
             }
             input:hover ,
             input:focus ,

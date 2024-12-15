@@ -50,8 +50,8 @@ svg {
 /* header part */
 header {
   width: 100%;
-  position: relative;
   z-index: 1;
+  position: relative;
 }
 header nav {
   background: rgba(0, 0, 0, 0.968);
@@ -73,6 +73,11 @@ header nav {
     padding: 22px 2%;
   }
 }
+@media (max-width: 650px) {
+  header nav {
+    padding: 18px 1.5%;
+  }
+}
 header nav figure {
   position: relative;
   display: inline-block;
@@ -82,25 +87,94 @@ header nav figure img {
   width: 80px;
   height: auto;
 }
-header nav ul {
+@media (max-width: 650px) {
+  header nav figure img {
+    width: 50px;
+  }
+}
+header nav .meun {
+  width: 20px;
+  margin-right: 12px;
+  display: none;
+  cursor: pointer;
+  transition: 0.35s ease-in;
+}
+@media (max-width: 650px) {
+  header nav .meun {
+    display: block;
+  }
+}
+header nav .close-meun:hover {
+  fill: rgba(0, 0, 0, 0.968);
+}
+header nav .open-meun:hover {
+  fill: red;
+}
+header nav .ul {
+  display: flex;
+  transition: 0.5s ease-in-out;
+}
+@media (max-width: 650px) {
+  header nav .ul {
+    position: fixed;
+    z-index: 1;
+    overflow: hidden;
+    top: 0;
+    right: -400px;
+    bottom: 0;
+    width: 60%;
+    background: rgb(131, 88, 9);
+    height: 100%;
+    display: block;
+  }
+}
+header nav .ul .close-meun {
+  margin: 20px 30px;
+}
+header nav .ul ul {
   display: flex;
 }
-header nav ul li a {
+@media (max-width: 650px) {
+  header nav .ul ul {
+    display: block;
+  }
+}
+header nav .ul ul li a {
   color: rgba(222, 222, 222, 0.936);
   text-decoration: none;
   margin: 0 10px;
   letter-spacing: 0.1em;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 0.952rem + 0.242vw, 1.2rem);
   font-weight: 700;
   transition: 0.35s ease-in;
 }
-header nav ul li a:hover,
-header nav ul li a.active {
-  color: red;
+@media (max-width: 650px) {
+  header nav .ul ul li a {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 17px auto;
+  }
+}
+header nav .ul ul li a:hover,
+header nav .ul ul li a.active {
+  color: rgb(131, 88, 9);
   border-bottom: 2.6px solid red;
 }
+@media (max-width: 650px) {
+  header nav .ul ul li a:hover,
+  header nav .ul ul li a.active {
+    border: none;
+    color: #111;
+  }
+}
 header nav .social-links {
-  display: flex;
+  display: inline-block;
+}
+@media (max-width: 830px) {
+  header nav .social-links {
+    display: none;
+  }
 }
 header nav .social-links svg {
   fill: rgba(222, 222, 222, 0.936);
@@ -115,32 +189,45 @@ header nav .social-links svg:hover {
   scale: 1.1;
 }
 header .hero {
+  margin-top: 30px;
   display: flex;
   background: linear-gradient(rgba(0, 0, 0, 0.968), rgba(46, 40, 40, 0.968));
   justify-content: space-between;
   flex-flow: row nowrap;
   gap: 2rem;
-  padding: 150px 7% 50px;
+  padding: 150px 5% 50px;
 }
 @media (max-width: 1178px) {
   header .hero {
-    padding: 150px 3.7%;
+    padding: 100px 3.5%;
+  }
+}
+@media (max-width: 820px) {
+  header .hero {
+    padding: 70px 1.5%;
+    flex-flow: column nowrap;
+    align-items: center;
   }
 }
 header .hero .block1 {
   width: 100%;
 }
 header .hero .block1 h1 {
-  margin: 0 0 50px;
-  font-size: 3.5rem;
+  margin: 0 0 10px;
+  font-size: clamp(1.888rem, 1.497rem + 1.954vw, 3.5rem);
   font-family: Roboto-BoldItalic;
   text-shadow: 2px 2px red;
 }
+@media (max-width: 650px) {
+  header .hero .block1 h1 {
+    text-align: center;
+  }
+}
 header .hero .block1 p {
-  margin: 40px auto;
-  line-height: 1.5;
+  margin: 15px auto;
+  line-height: 1.3;
   font-family: Poppins-Bold;
-  font-size: 1.2rem;
+  font-size: clamp(0.887rem, 0.811rem + 0.379vw, 1.2rem);
 }
 header .hero .block1 .btnevent button {
   padding: 15px 20px;
@@ -149,8 +236,15 @@ header .hero .block1 .btnevent button {
   cursor: pointer;
   background: linear-gradient(to right, orange 90%, red);
   color: rgba(0, 0, 0, 0.968);
-  font-size: 1.2rem;
+  font-size: clamp(0.889rem, 0.814rem + 0.377vw, 1.2rem);
   transition: 0.3s ease-in;
+  margin-top: 15px;
+  font-size: clamp(0.957rem, 0.898rem + 0.295vw, 1.2rem);
+}
+@media (max-width: 650px) {
+  header .hero .block1 .btnevent button {
+    padding: 8px;
+  }
 }
 header .hero .block1 .btnevent button:hover {
   background: linear-gradient(to right, rgb(131, 88, 9) 90%, rgb(179, 23, 23));
@@ -158,6 +252,11 @@ header .hero .block1 .btnevent button:hover {
 }
 header .hero .block2 {
   width: 70%;
+}
+@media (max-width: 650px) {
+  header .hero .block2 {
+    width: 95%;
+  }
 }
 header .hero .block2 figure {
   width: 100%;
@@ -192,9 +291,21 @@ main .review-class {
     padding: 40px 4%;
   }
 }
+@media (max-width: 820px) {
+  main .review-class {
+    padding: 70px 1.5%;
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+}
+@media (max-width: 650px) {
+  main .review-class {
+    padding: 20px 2%;
+  }
+}
 main .review-class .class1 h2 {
   margin: 12px auto;
-  font-size: 2rem;
+  font-size: clamp(1.222rem, 1.033rem + 0.943vw, 2rem);
   font-family: Roboto-Black;
   padding-bottom: 8px;
 }
@@ -206,15 +317,30 @@ main .review-class .class1 .line {
   margin-bottom: 10px;
 }
 main .review-class .class1 h3 {
-  font-size: 1.155rem;
+  font-size: clamp(0.822rem, 0.741rem + 0.404vw, 1.155rem);
   color: #f4f4f4;
   font-family: sans-serif;
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: 0 0.6em;
 }
-main .review-class .class2 video {
-  width: 500px;
+@media (max-width: 820px) {
+  main .review-class .class2 {
+    text-align: center;
+  }
+}
+main .review-class .class2 figure {
+  width: 100%;
+  height: auto;
+}
+main .review-class .class2 figure video {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 820px) {
+  main .review-class .class2 figure video {
+    width: 95%;
+  }
 }
 main .Subscribe {
   width: 100%;
@@ -225,12 +351,17 @@ main .Subscribe {
 }
 main .Subscribe h2 {
   margin: 20px auto;
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 1.63rem + 0.848vw, 2.5rem);
   font-weight: 700;
   font-family: Roboto-BoldItalic;
 }
+@media (max-width: 820px) {
+  main .Subscribe h2 {
+    margin: 15px auto;
+  }
+}
 main .Subscribe h3 {
-  font-size: 1.1rem;
+  font-size: clamp(0.755rem, 0.671rem + 0.418vw, 1.1rem);
   margin-bottom: 11px;
   font-family: sans-serif;
 }
@@ -255,6 +386,13 @@ main .Subscribe form input {
   border-radius: 5px;
   text-align: center;
   transition: 0.4s ease-in-out;
+  width: 100%;
+}
+@media (max-width: 820px) {
+  main .Subscribe form input {
+    padding: 8px 2px;
+    font-size: 1rem;
+  }
 }
 main .Subscribe form input:hover,
 main .Subscribe form input:focus {
@@ -267,9 +405,14 @@ main .Subscribe form .sib-btn {
   cursor: pointer;
   background: linear-gradient(to right, orange 90%, red);
   color: rgba(0, 0, 0, 0.968);
-  font-size: 1.2rem;
+  font-size: clamp(0.889rem, 0.814rem + 0.377vw, 1.2rem);
   transition: 0.3s ease-in;
   padding: 10px 26px;
+}
+@media (max-width: 820px) {
+  main .Subscribe form .sib-btn {
+    padding: 5px 20px;
+  }
 }
 main .Subscribe form .sib-btn:hover {
   background: linear-gradient(to right, rgb(131, 88, 9) 90%, rgb(179, 23, 23));
@@ -279,6 +422,12 @@ main .Subscribe h4 {
   margin: 55px auto;
   font-size: 1rem;
   font-family: sans-serif;
+}
+@media (max-width: 820px) {
+  main .Subscribe h4 {
+    margin: 38px auto;
+    font-size: 0.955;
+  }
 }
 main .what-you-get {
   width: 100%;
@@ -298,34 +447,42 @@ main .what-you-get .con {
   grid-template-rows: auto auto;
   position: relative;
 }
-@media (max-width: 1178px) {
+@media (max-width: 620px) {
   main .what-you-get .con {
-    padding: 22px 3%;
+    padding: 22px 2%;
+    gap: 1.5rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 620px) {
+  main .what-you-get .con {
+    padding: 42px 2.2%;
   }
 }
 main .what-you-get .con .box {
   padding: 12px 10px;
   border-radius: 11px;
-  /* .c {
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      background: v.$red-hover;
-      border-radius: 50%;
-      top: 10px;
-      left: 10px;
-      opacity: 0.4;
-  } */
+}
+@media (max-width: 620px) {
+  main .what-you-get .con .box {
+    padding: 8px;
+  }
 }
 main .what-you-get .con .box h2 {
   margin-bottom: 40px;
   text-decoration: underline;
+  font-size: clamp(1.188rem, 1.112rem + 0.378vw, 1.5rem);
+}
+@media (max-width: 620px) {
+  main .what-you-get .con .box h2 {
+    margin-bottom: 20px;
+  }
 }
 main .what-you-get .con .box p {
   color: #333;
   line-height: 1.3;
   font-family: sans-serif;
-  font-size: 1.5rem;
+  font-size: clamp(0.878rem, 0.727rem + 0.754vw, 1.5rem);
 }
 main .saying {
   width: 100%;
@@ -336,11 +493,21 @@ main .saying {
     padding: 72px 3.5%;
   }
 }
+@media (max-width: 620px) {
+  main .saying {
+    padding: 42px 2.2%;
+  }
+}
 main .saying h2 {
   text-align: center;
   margin-bottom: 50px;
-  font-size: 3.3rem;
+  font-size: clamp(1.5rem, 1.064rem + 2.182vw, 3.3rem);
   font-family: Roboto-Black;
+}
+@media (max-width: 620px) {
+  main .saying h2 {
+    margin-bottom: 30px;
+  }
 }
 main .saying .say-lists {
   display: grid;
@@ -353,11 +520,17 @@ main .saying .say-lists .say-box h3 {
   margin-bottom: 22px;
   color: #f4f4f4;
   line-height: 1.4;
-  font-size: 1.4rem;
+  font-size: 1rem;
+}
+@media (max-width: 1178px) {
+  main .saying .say-lists .say-box h3 {
+    margin-bottom: 18px;
+    line-height: clamp(1.1rem, 1.027rem + 0.364vw, 1.4rem);
+  }
 }
 main .saying .say-lists .say-box p {
   color: rgb(131, 88, 9);
-  font-size: 1.2rem;
+  font-size: clamp(0.888rem, 0.812rem + 0.378vw, 1.2rem);
   letter-spacing: 0.1em;
 }
 main .saying .say-lists .say-box p::before {
@@ -378,8 +551,13 @@ main .saying .say-lists .say-box p::before {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+@media (max-width: 620px) {
+  .event-top {
+    padding: 105px 10px;
+  }
+}
 .event-top h2 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 1.758rem + 1.212vw, 3rem);
   font-family: Roboto-Black;
 }
 
@@ -404,8 +582,13 @@ main .saying .say-lists .say-box p::before {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+@media (max-width: 620px) {
+  .contact-top {
+    padding: 105px 10px;
+  }
+}
 .contact-top h2 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 1.758rem + 1.212vw, 3rem);
   font-family: Roboto-Black;
 }
 
@@ -420,26 +603,48 @@ main .saying .say-lists .say-box p::before {
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
 }
+@media (max-width: 928px) {
+  .contact {
+    padding: 50px 2.5%;
+    gap: 2rem;
+  }
+}
+@media (max-width: 820px) {
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
 .contact svg {
   width: 25px;
   margin: 10px;
 }
+@media (max-width: 820px) {
+  .contact svg {
+    width: 20px;
+  }
+}
 .contact .contact1 h3 {
   margin-bottom: 12px;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 1.127rem + 0.364vw, 1.5rem);
   border-bottom: 2px solid rgb(179, 23, 23);
   padding-bottom: 11px;
 }
 .contact .contact1 .social-links .con {
   margin: 25px auto;
 }
+@media (max-width: 820px) {
+  .contact .contact1 .social-links .con {
+    margin: 20px 2px;
+  }
+}
 .contact .contact1 .social-links .con a {
   display: inline-flex;
   align-items: center;
   margin: 5px auto;
   color: red;
-  font-size: 1.2rem;
+  font-size: clamp(0.858rem, 0.812rem + 0.378vw, 1.2rem);
   letter-spacing: 0.1em;
 }
 .contact .contact1 .social-links .links {
@@ -454,11 +659,11 @@ main .saying .say-lists .say-box p::before {
 }
 .contact .contact2 h3 {
   margin-bottom: 20px;
-  font-size: 1.5rem;
+  font-size: clamp(1.258rem, 1.199rem + 0.293vw, 1.5rem);
 }
 .contact .contact2 form label {
   font-family: Roboto-BoldItalic;
-  font-size: 1.22rem;
+  font-size: clamp(1.122rem, 1.098rem + 0.119vw, 1.22rem);
 }
 .contact .contact2 form input,
 .contact .contact2 form textarea {
@@ -479,6 +684,13 @@ main .saying .say-lists .say-box p::before {
   margin: 12px auto;
   transition: 0.4s ease-in;
 }
+@media (max-width: 620px) {
+  .contact .contact2 form input,
+  .contact .contact2 form textarea {
+    padding: 10px 5px;
+    font-size: 1rem;
+  }
+}
 .contact .contact2 form input:hover,
 .contact .contact2 form input:focus,
 .contact .contact2 form textarea:hover,
@@ -495,7 +707,7 @@ main .saying .say-lists .say-box p::before {
   cursor: pointer;
   background: linear-gradient(to right, orange 90%, red);
   color: rgba(0, 0, 0, 0.968);
-  font-size: 1.2rem;
+  font-size: clamp(0.889rem, 0.814rem + 0.377vw, 1.2rem);
   transition: 0.3s ease-in;
   margin-top: 20px;
   padding: 8px 42px;
@@ -519,8 +731,13 @@ main .saying .say-lists .say-box p::before {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+@media (max-width: 620px) {
+  .store-top {
+    padding: 105px 10px;
+  }
+}
 .store-top h2 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 1.758rem + 1.212vw, 3rem);
   font-family: Roboto-Black;
 }
 
@@ -534,8 +751,20 @@ footer .below {
   padding: 25px 3%;
   background: #000;
   display: flex;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
+}
+@media (max-width: 810px) {
+  footer .below {
+    padding: 23px 1.5%;
+  }
+}
+@media (max-width: 650px) {
+  footer .below {
+    flex-flow: column nowrap;
+    text-align: center;
+  }
 }
 footer .below .below1 figure {
   width: 100%;
@@ -546,8 +775,19 @@ footer .below .below1 figure img {
   height: auto;
   transition: 0.3s ease-in;
 }
+@media (max-width: 810px) {
+  footer .below .below1 figure img {
+    width: 110px;
+  }
+}
+@media (max-width: 650px) {
+  footer .below .below1 figure img {
+    margin-bottom: 20px;
+    width: 80px;
+  }
+}
 footer .below .below2 h4 {
-  font-size: 1.25rem;
+  font-size: clamp(0.844rem, 0.746rem + 0.492vw, 1.25rem);
 }
 footer .below .below2 h4 a {
   color: rgb(131, 88, 9);

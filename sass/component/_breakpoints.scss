@@ -1,5 +1,11 @@
 $break-points : (
     'min-laptop' : 1178px,
+    'expand-contact-laptop' : 928px,
+    'taplet-handboger' : 830px,
+    'break-p' : 820px,
+    'show-meun' : 650px,
+    '600px' : 620px,
+    '810px' : 810px
 );
 
 @mixin breakPoint($val) {
