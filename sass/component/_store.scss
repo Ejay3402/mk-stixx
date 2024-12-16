@@ -8,3 +8,66 @@
         @include m.top-h2();
     }
 }
+
+.store {
+    width: 100%;
+    height: auto;
+    padding: 80px 3.5%;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-rows: auto auto;
+
+    .store-list {
+        padding: 8px;
+        background: #222;
+        border-radius: 15px;
+        figure {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: .500s ease-in;
+            img {
+                overflow: hidden;
+                width: 100%;
+                border-radius: 15px;
+                height: auto;
+                transition: .500s ease-in;
+            }
+        }
+        figure:hover img{
+            scale: 1.1;
+        }
+
+        h2 {
+            color:#f4f4f4;
+            font-size: clamp(1.055rem, 0.935rem + 0.6vw, 1.55rem);
+            letter-spacing: .1em;
+            margin: 10px auto;
+        }
+
+        .coxt {
+            h3 {
+                margin: 5px auto;
+                font-size: clamp(1.05rem, 0.989rem + 0.303vw, 1.3rem);
+                color: #fff;
+                letter-spacing: .2em;
+            }
+        }
+
+        .btn {
+            width: 100%;
+            
+            button {
+                @include m.button();
+                padding: 8px 10px;
+                width: 100%;
+            }
+            button:hover {
+                @include m.button-hover();
+            }
+        }
+    }
+}
+

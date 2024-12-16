@@ -741,6 +741,69 @@ main .saying .say-lists .say-box p::before {
   font-family: Roboto-Black;
 }
 
+.store {
+  width: 100%;
+  height: auto;
+  padding: 80px 3.5%;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-rows: auto auto;
+}
+.store .store-list {
+  padding: 8px;
+  background: #222;
+  border-radius: 15px;
+}
+.store .store-list figure {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.5s ease-in;
+}
+.store .store-list figure img {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 15px;
+  height: auto;
+  transition: 0.5s ease-in;
+}
+.store .store-list figure:hover img {
+  scale: 1.1;
+}
+.store .store-list h2 {
+  color: #f4f4f4;
+  font-size: clamp(1.055rem, 0.935rem + 0.6vw, 1.55rem);
+  letter-spacing: 0.1em;
+  margin: 10px auto;
+}
+.store .store-list .coxt h3 {
+  margin: 5px auto;
+  font-size: clamp(1.05rem, 0.989rem + 0.303vw, 1.3rem);
+  color: #fff;
+  letter-spacing: 0.2em;
+}
+.store .store-list .btn {
+  width: 100%;
+}
+.store .store-list .btn button {
+  padding: 15px 20px;
+  border: none;
+  border-radius: 11px;
+  cursor: pointer;
+  background: linear-gradient(to right, orange 90%, red);
+  color: rgba(0, 0, 0, 0.968);
+  font-size: clamp(0.889rem, 0.814rem + 0.377vw, 1.2rem);
+  transition: 0.3s ease-in;
+  padding: 8px 10px;
+  width: 100%;
+}
+.store .store-list .btn button:hover {
+  background: linear-gradient(to right, rgb(131, 88, 9) 90%, rgb(179, 23, 23));
+  color: rgba(222, 222, 222, 0.936);
+}
+
 footer {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
