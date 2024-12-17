@@ -55,8 +55,13 @@ header {
                 display: block;
             }
         }
-        .close-meun:hover {
+        
+        .close-meun {
             fill: v.$black;
+        }
+
+        .close-meun:hover {
+            fill: v.$red;
         }
         
         .open-meun:hover {
@@ -66,6 +71,7 @@ header {
         .ul {
             display: flex;
             transition: .500s ease-in-out;
+            align-items: center;
             @include b.breakPoint(show-meun) {
                 position: fixed;
                 z-index: 1;
@@ -74,7 +80,7 @@ header {
                 right: /* 0 */ -400px;
                 bottom: 0;
                 width: 60%;
-                background: v.$oranged-hover;
+                background: rgb(211, 205, 205);
                 height: 100%;
                 display: block;
 
@@ -101,6 +107,7 @@ header {
                         width: 100%;
                         justify-content: center;
                         margin: 17px auto;
+                        color: v.$black;
                     }
 
 
@@ -111,7 +118,7 @@ header {
                     border-bottom: 2.6px solid v.$red;
                     @include b.breakPoint(show-meun) {
                         border: none;
-                        color: #111;
+                        color: v.$oranged-hover;
                     }
                 }
             }
@@ -152,7 +159,7 @@ header {
         }
 
         @include b.breakPoint(break-p) {
-            padding: 70px 1.5%;
+            padding: 70px 2.5%;
             flex-flow: column nowrap;
             align-items: center;
         }
@@ -164,8 +171,7 @@ header {
             h1 {
                 margin: 0 0 10px;
                 font-size: clamp(1.888rem, 1.497rem + 1.954vw, 3.5rem);
-                font-family: v.$Roboto-BoldItalic;
-                text-shadow: 2px 2px v.$red;
+                font-family: v.$Poppins-Bold;
 
                 @include b.breakPoint(show-meun) {
                     text-align: center;

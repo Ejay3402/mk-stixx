@@ -16,7 +16,55 @@
     background: v.$sub-w;
     height: auto;
     width: 100%;
-    padding: 150px 4%;
+    padding: 80px 3.2%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    color: v.$black;
+
+    .event-box {
+        padding: 8px 10px;
+        background: rgb(198, 195, 195);
+        figure {
+            width: 100%;
+            height: auto;
+            transition: .500s ease-in;
+            img {
+                transition: .410s ease-in-out;
+                width: 100%;
+                height: auto;
+            }
+        }
+        .event-list {
+            color: v.$black;
+
+            h2 {
+                margin: 17px auto;
+                font-size: clamp(1.115rem, 0.997rem + 0.588vw, 1.6rem);
+            }
+            h3, h4 , p {
+                margin: 12px auto;
+            }
+
+            h3 {
+                font-size: clamp(0.885rem, 0.76rem + 0.624vw, 1.4rem);
+            }
+
+            .btn-event {
+                width: 100%;
+
+                button {
+                    @include m.button();
+                    width: 100%;
+                    padding: 9px 10px;
+                }
+                button:hover {
+                    @include m.button-hover();
+                }
+            }
+
+
+        }
+    }
 
     
 }
