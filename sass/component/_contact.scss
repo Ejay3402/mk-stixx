@@ -58,7 +58,7 @@
                     display: inline-flex;
                     align-items: center;
                     margin: 5px auto;
-                    color: v.$red;
+                    color: v.$white;
                     font-size: clamp(0.858rem, 0.812rem + 0.378vw, 1.2rem);
                     letter-spacing: .1em;
                 }
@@ -70,7 +70,7 @@
                     transition: .400s ease-in;
                 }
                 svg:hover {
-                    fill: v.$red;
+                    fill: v.$white;
                 }
             } 
         }

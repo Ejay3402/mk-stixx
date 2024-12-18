@@ -2,26 +2,27 @@
 @use 'variable' as v;
 @use 'mixins' as m;
 
-.store-top {
+/* .store-top {
     @include m.top-style();
     h2 {
         @include m.top-h2();
     }
-}
+ */
 
 .store {
+    margin-top: 20px;
     width: 100%;
     height: auto;
     padding: 80px 3.5%;
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    grid-template-rows: auto auto;
 
     .store-list {
         padding: 8px;
         background: #222;
         border-radius: 15px;
+        transition: .500s ease-in;
         figure {
             width: 100%;
             height: auto;
@@ -32,7 +33,7 @@
                 overflow: hidden;
                 width: 100%;
                 border-radius: 15px;
-                height: auto;
+                height: 60vh;
                 transition: .500s ease-in;
             }
         }
@@ -68,6 +69,10 @@
                 @include m.button-hover();
             }
         }
+    }
+    .store-list:hover {
+        scale: 1.022;
+        box-shadow: 2px 2px 5px rgb(51, 7, 7), -2px -2px 5px rgb(51, 7, 7);
     }
 }
 
